@@ -33,7 +33,7 @@ class View(ft.UserControl):
 
         self._btnCreaGrafo = ft.ElevatedButton(text="Crea Grafo", on_click=self._controller.handleCreaGrafo)
         self._btnCerca = ft.ElevatedButton(text="Cerca Percorso Massimo",
-                                           on_click=self._controller.handleCerca, disabled=True)
+                                           on_click=self._controller.handleCerca, disabled=False)
         self._btnRicorsione = ft.ElevatedButton(text="Ricorsione",
                                            on_click=self._controller.handleRicorsione, disabled=True)
 
@@ -43,6 +43,7 @@ class View(ft.UserControl):
         self._page.controls.append(row2)
         self.txt_result = ft.ListView(expand=1, spacing=10, padding=20, auto_scroll=True)
         self._page.controls.append(self.txt_result)
+        self._controller.fillDDStore()
         self._page.update()
 
     @property
